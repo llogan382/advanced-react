@@ -110,5 +110,8 @@
         ]
       }
     }
+  },
+  "directories": {
+    "lib": "lib"
   }
 }

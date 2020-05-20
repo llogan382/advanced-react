@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< refs/remotes/origin/master:stepped-solutions/08/frontend/components/Page.js
 import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 import Header from './Header';
 import Meta from './Meta';
@@ -63,6 +64,21 @@ class Page extends Component {
       </ThemeProvider>
     );
   }
+=======
+import Header from './Header';
+import Meta from './Meta';
+
+class Page extends Component {
+    render() {
+        return (
+            <div>
+                <Meta />
+                <Header />
+                {this.props.children}
+            </div>
+        );
+    }
+>>>>>>> More May:frontend/components/Page.js
 }
 
 export default Page;

@@ -1,3 +1,4 @@
+<<<<<<< refs/remotes/origin/master:stepped-solutions/09/frontend/components/Header.js
 import Link from 'next/link';
 import styled from 'styled-components';
 import Router from 'next/router';
@@ -72,3 +73,21 @@ const Header = () => (
 );
 
 export default Header;
+=======
+import Nav from './Nav';
+
+const Header = () => (
+    <div>
+        <div className="bar">
+            <a href="">Sick Fits</a>
+            <Nav />
+        </div>
+        <div className="sub-bar">
+            <p>Search</p>
+        </div>
+        <div>Cart</div>
+    </div>
+)
+
+export default Header;
+>>>>>>> More May:frontend/components/Header.js
