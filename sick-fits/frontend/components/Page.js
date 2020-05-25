@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import Header from './Header';
+import Meta from './Meta';
 
 class Page extends Component {
     render() {
         return (
             <div>
-                <p>Hey Im the page</p>
-                {this.props.children}
+                <Header />
+
             </div>
         );
     }
