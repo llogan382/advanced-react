@@ -10,8 +10,6 @@ class MyApp extends App {
         const { Component } = this.props;
         return (
             <Container>
-                <p>Hey Im on every page!</p>
-
                 {/* Use the Page component */}
                 <Page>
                     <Component />
