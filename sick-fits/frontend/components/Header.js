@@ -1,6 +1,18 @@
 import Nav from './Nav';
 import Link from 'next/link';
 import styled from 'styled-components';
+import Router from 'next/router';
+import NProgress from 'nprogress';
+
+Router.onRouteChangeStart = () => {
+  NProgress.start();
+}
+Router.onRouteChangeComplete = () => {
+  NProgress.done();
+}
+Router.onRouteChangeError = () => {
+  NProgress.done();
+}
 
 
 // Create the styled components as an OBJECT; these are reused
@@ -43,25 +55,26 @@ const StyledHeader = styled.header`
   }
 `;
 
+
 const Header = () => (
 
-    // The whole header is wrapped in the styled header component created above
-    <StyledHeader>
-        <div className="bar">
-            <Logo>
-                <Link href="/">
+  // The whole header is wrapped in the styled header component created above
+  <StyledHeader>
+    <div className="bar">
+      <Logo>
+        <Link href="/">
 
-                    <a>Sick Fits</a>
-                </Link>
+          <a>Sick Fits</a>
+        </Link>
 
-            </Logo>
-            <Nav />
-        </div>
-        <div className="sub-bar">
-            <p>Search</p>
-        </div>
-        <div>Cart</div>
-    </StyledHeader>
+      </Logo>
+      <Nav />
+    </div>
+    <div className="sub-bar">
+      <p>Search</p>
+    </div>
+    <div>Cart</div>
+  </StyledHeader>
 
 )
 export default Header;
