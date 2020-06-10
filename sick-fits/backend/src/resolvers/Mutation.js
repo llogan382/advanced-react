@@ -1,3 +1,12 @@
-const mutations = {};
+const mutations = {
+    createDog(Parent, args, ctx, info) {
+        global.dogs = global.dogs || [];
+
+        const newDog = { name: args.name };
+        global.dogs.push(newDog);
+        return newDog;
+
+    },
+};
 
 module.exports = mutations;
