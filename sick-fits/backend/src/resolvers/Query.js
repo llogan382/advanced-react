@@ -1,12 +1,15 @@
+const { forwardTo } = require('prisma-binding');
+
 const Query = {
 
-    // Method for each query
-    dogs(parent, args, ctx, info) {
+    // If you just want to query the DB without auth or anything, just get all info from DB:
+    items: forwardTo('db')
 
-        // DB calls go here.
-        global.dogs = global.dogs || [];
-        return global.dogs;
-    },
+    // async items(parent, args, ctx, info) {
+    //     const items = await ctx.db.query.items();
+    //     return items;
+
+    // }
 
 };
 

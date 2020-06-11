@@ -1,5 +1,20 @@
+# This is our DB for prisma.
+# Any time this updates, you have to deploy to prisma
+
 type User {
-  id: ID! @id @unique
+  id: ID! @id
   name: String!
   email: String!
+}
+
+type Item {
+  id: ID! @id
+  title: String!
+  description: String!
+  image: String
+  largeImage: String
+  price: Int!
+  # createAt: DateTime! @updatedAt
+  # updatedAt: DateTime!
+  # user: User!
 }
