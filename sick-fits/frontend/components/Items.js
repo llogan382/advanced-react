@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo'; //query is a component
-
 import gql from 'graphql-tag';
+import styled from 'styled-components';
+import Item from './Item';
 
 //queries should be in caps. Keep names of queries the same as the variable for ease of use
 const ALL_ITEMS_QUERY = gql`
