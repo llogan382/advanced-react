@@ -17,23 +17,38 @@ const ALL_ITEMS_QUERY = gql`
     }
 `;
 
+const Center = styled.div`
+text-align: center;
+`;
+const ItemsList = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 60px;
+max-width: ${props => props.theme.maxWidth};
+margin: 0 auto;
+`;
+
+
 export default class Items extends Component {
     render() {
         return (
-            <div>
-                <p>
-
-                    Items!!!
-                </p>
-
+            <Center>
                 <Query query={ALL_ITEMS_QUERY}>
                     {/*The only child of a query must be a function  */}
                     {({ data, error, loading }) => {
-                        console.log(data, error, loading);
-                        return <p>Child of query! </p>
+                        if (loading) return <p>Loading...</p>;
+                        if (error) return <p>
+                            {error.message}
+                        </p>;
+                        return <ItemsList>
+                            {/* mapping is how you loop in react */}
+                            {data.items.map(item =>
+                                <Item item={item} key={item.id}></Item>
+                            )}
+                        </ItemsList>;
                     }}
                 </Query>
-            </div>
+            </Center>
         );
     }
 }
