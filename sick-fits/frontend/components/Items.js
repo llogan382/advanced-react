@@ -31,11 +31,11 @@ margin: 0 auto;
 `;
 
 
-export default class Items extends Component {
+class Items extends Component {
     render() {
         return (
             <Center>
-                <Pagination />
+                <Pagination page={this.props.page} />
                 <Query query={ALL_ITEMS_QUERY}>
                     {/*The only child of a query must be a function  */}
                     {({ data, error, loading }) => {
@@ -51,11 +51,12 @@ export default class Items extends Component {
                         </ItemsList>;
                     }}
                 </Query>
-                <Pagination />
+                <Pagination page={this.props.page} />
 
             </Center>
         );
     }
 }
 
+export default Items;
 export { ALL_ITEMS_QUERY };
