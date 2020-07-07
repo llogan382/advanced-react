@@ -33,7 +33,7 @@ export default class Item extends Component {
                 </Title>
                 <PriceTag>
 
-                    {formatMoney(item.price)};
+                    {formatMoney(item.price)}
                 </PriceTag>
                 <p>{item.description}</p>
 
