@@ -3,6 +3,7 @@ import { Query } from 'react-apollo'; //query is a component
 import gql from 'graphql-tag';
 import styled from 'styled-components';
 import Item from './Item';
+import Pagination from './Pagination';
 
 //queries should be in caps. Keep names of queries the same as the variable for ease of use
 const ALL_ITEMS_QUERY = gql`
@@ -34,6 +35,7 @@ export default class Items extends Component {
     render() {
         return (
             <Center>
+                <Pagination />
                 <Query query={ALL_ITEMS_QUERY}>
                     {/*The only child of a query must be a function  */}
                     {({ data, error, loading }) => {
@@ -49,6 +51,8 @@ export default class Items extends Component {
                         </ItemsList>;
                     }}
                 </Query>
+                <Pagination />
+
             </Center>
         );
     }
