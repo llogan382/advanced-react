@@ -16,7 +16,7 @@ const PAGINATION_QUERY = gql`
 
 const Pagination = props => (
     <PaginationStyles>
-        <p>Hi Im the pagination!</p>
+        <Query query={PAGINATION_QUERY}>{({ data, loading, error }) => <p>Hi Im the pagination{data.itemsConnection.aggregate.count}</p>}</Query>
     </PaginationStyles>
 )
 
