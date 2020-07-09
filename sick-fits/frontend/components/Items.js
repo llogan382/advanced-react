@@ -4,21 +4,21 @@ import gql from 'graphql-tag';
 import styled from 'styled-components';
 import Item from './Item';
 import Pagination from './Pagination';
+import { perPage } from '../config';
 
 //queries should be in caps. Keep names of queries the same as the variable for ease of use
 const ALL_ITEMS_QUERY = gql`
-    query ALL_ITEMS_QUERY {
-        items {
-            id
-            title
-            price
-            description
-            image
-            largeImage
-        }
+  query ALL_ITEMS_QUERY($skip: Int = 0, $first: Int = ${perPage}) {
+    items(first: $first, skip: $skip) {
+      id
+      title
+      price
+      description
+      image
+      largeImage
     }
+  }
 `;
-
 const Center = styled.div`
 text-align: center;
 `;
@@ -36,7 +36,12 @@ class Items extends Component {
         return (
             <Center>
                 <Pagination page={this.props.page} />
-                <Query query={ALL_ITEMS_QUERY}>
+                <Query query={ALL_ITEMS_QUERY}
+                    variables={{
+                        skip: this.props.page * perPage - perPage,
+
+                    }}
+                >
                     {/*The only child of a query must be a function  */}
                     {({ data, error, loading }) => {
                         if (loading) return <p>Loading...</p>;
