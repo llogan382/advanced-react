@@ -9,7 +9,7 @@ import { perPage } from '../config';
 //queries should be in caps. Keep names of queries the same as the variable for ease of use
 const ALL_ITEMS_QUERY = gql`
   query ALL_ITEMS_QUERY($skip: Int = 0, $first: Int = ${perPage}) {
-    items(first: $first, skip: $skip) {
+    items(first: $first, skip: $skip, orderBy: id_DESC) {
       id
       title
       price
@@ -39,7 +39,6 @@ class Items extends Component {
                 <Query query={ALL_ITEMS_QUERY}
                     variables={{
                         skip: this.props.page * perPage - perPage,
-
                     }}
                 >
                     {/*The only child of a query must be a function  */}
