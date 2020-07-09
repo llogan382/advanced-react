@@ -5,6 +5,8 @@ const Query = {
     // If you just want to query the DB without auth or anything, just get all info from DB:
     items: forwardTo('db'),
     item: forwardTo('db'),
+    itemsConnection: forwardTo('db'),
+
 
 
     // async items(parent, args, ctx, info) {
