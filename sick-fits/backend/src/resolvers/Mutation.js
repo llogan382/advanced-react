@@ -1,3 +1,4 @@
+const bcrypt = require('bcryptjs');
 const mutations = {
     async createItem(parent, args, ctx, info) {
 
@@ -43,8 +44,13 @@ const mutations = {
         // 3. Delete it.
         return ctx.db.mutation.deleteItem({ where }, info);
 
+    },
+    // Use the mutation from the scheme
+    async signup(parent, args, ctx, info) {
+        // Make email all lower case
+        args.email = args.email.toLowerCase();
+        args.password =
     }
-
 
 
 };
