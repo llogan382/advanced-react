@@ -1,4 +1,4 @@
-import { text } from '@keystone-next/fields';
+import { integer, select, text } from '@keystone-next/fields';
 import { list } from '@keystone-next/keystone/schema';
 
 export const Product = list({
@@ -11,5 +11,19 @@ export const Product = list({
         displayMode: 'textarea',
       },
     }),
+    status: select({
+      options: [
+        { label: 'Draft', value: 'DRAFT' },
+        { label: 'Avalable', value: 'AVALABLE' },
+        { label: 'Unavailable', value: 'UNAVAILABLE' },
+      ],
+      defaultValue: 'DRAFT',
+      ui: {
+        displayMode: 'segmented-control',
+        createView: { fieldMode: 'hidden' },
+      },
+    }),
+    price: integer(),
+    // TODO: photo
   },
 });
