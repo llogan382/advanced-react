@@ -6,6 +6,7 @@ import {
   statelessSessions,
 } from '@keystone-next/keystone/session';
 import { User } from './schemas/User';
+import { Product } from './schemas/Product';
 
 // define db
 
@@ -44,6 +45,7 @@ export default withAuth(
     lists: createSchema({
       // schema items fo in here
       User,
+      Product,
     }),
     ui: {
       // TODO: change this for roles
