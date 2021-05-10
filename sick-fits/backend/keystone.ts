@@ -7,6 +7,7 @@ import {
 } from '@keystone-next/keystone/session';
 import { User } from './schemas/User';
 import { Product } from './schemas/Product';
+import { ProductImage } from './schemas/ProductImage';
 
 // define db
 
@@ -46,6 +47,7 @@ export default withAuth(
       // schema items fo in here
       User,
       Product,
+      ProductImage,
     }),
     ui: {
       // TODO: change this for roles
