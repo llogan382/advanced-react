@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
 import Header from './Header';
 
@@ -8,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
     src: url('public/static/radnikanext-medium-webfont.woff2') format('woff2'); font-weight: normal;
     font-style: normal;
   }
+
   html {
     --red: #ff0000;
     --black: #393939;
@@ -19,9 +19,10 @@ const GlobalStyles = createGlobalStyle`
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
     box-sizing: border-box;
+    font-size: 62.5%;
 
   }
-  *, *:::before, *:after {
+  *, *::before, *:after {
     box-sizing: inherit;
     padding: 0;
     margin: 0;
@@ -60,8 +61,3 @@ export default function Page({ children }) {
     </div>
   );
 }
-
-Page.propTypes = {
-  cool: PropTypes.string,
-  children: PropTypes.arrayOf(PropTypes.node),
-};

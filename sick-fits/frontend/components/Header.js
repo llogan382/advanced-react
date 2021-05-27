@@ -44,7 +44,7 @@ export default function Header() {
         <p>Searh</p>
       </div>
       <Nav />
-      <p>I am the HeaderStyles!</p>
+      <p>I stopped at video 20 at 16:26</p>
     </HeaderStyles>
   );
 }
