@@ -8,7 +8,6 @@ export default class MyDocument extends Document {
       sheet.collectStyles(<App {...props} />)
     );
     const styleTags = sheet.getStyleElement();
-    console.log(styleTags);
 
     return { ...page, styleTags };
   }
